@@ -1,0 +1,21 @@
+body{
+    display: grid;
+    grid-template-areas: 
+    "cabeca cabeca cabeca"
+    "braco corpo corpo"
+    "perna perna perna";
+    grid-template-rows: 200px 600px 150px ;
+    grid-template-columns: 200px auto auto;
+}
+header{
+    grid-area: cabeca;
+    background-color: darkcyan;
+}
+aside{
+    grid-area: braco;
+    background-color: lightcoral;
+}
+main{
+    grid-area:corpo;
+    background-color: thistle;
+}
