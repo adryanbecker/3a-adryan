@@ -4,54 +4,18 @@ body{
     "cabeca cabeca cabeca"
     "braco corpo corpo"
     "perna perna perna";
-    grid-template-rows: 200px auto 150px;
+    grid-template-rows: 200px 600px 150px ;
     grid-template-columns: 200px auto auto;
 }
 header{
     grid-area: cabeca;
-    background-color: rgb(4, 0, 250);
+    background-color: darkcyan;
 }
 aside{
     grid-area: braco;
-    background-color: rgb(0, 26, 255);
+    background-color: lightcoral;
 }
 main{
-    grid-area: corpo;
-    background-color: rgb(0, 0, 0);
-}
-footer{
-    grid-area: perna;
-    background-color: rgb(0, 0, 0);
-}
-
-@media only screen and (max-width) {
-   body{
-    grid-area: "cabeca"
-               "corpo"
-               "perna";
-               grid-template-columns: auto;
-               grid-template-rows: 150px 50px 500px 200px;
-               
-   }
-}
-
-.mae{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.card{
-    border: rgb(38, 0, 255) 2px solid;
-    background-color: rgba(105, 237, 255, 0.733);
-    width: 400px;
-    padding: 20px;
-    text-align: center;
-    border-radius: 15px;
-    margin: 20px;
-}
-
-.img_card{
-    width: 350px;
+    grid-area:corpo;
+    background-color: thistle;
 }
