@@ -1,21 +1,481 @@
-body{
+/* =====================================================
+   CONFIGURAÇÕES GERAIS
+   ===================================================== */
+
+/* Remove espaçamentos padrão do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Configurações gerais da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #f2f5f2;
+
+    color: #26332a;
+
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+   ===================================================== */
+
+header {
+    background-color: #1f5c38;
+
+    color: white;
+
+    padding: 55px 20px;
+}
+
+
+.cabecalho-conteudo {
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+.identificacao {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
+    color: #c9e6d2;
+}
+
+
+header h1 {
+    font-size: 42px;
+
+    line-height: 1.1;
+
+    margin-bottom: 15px;
+}
+
+
+header p:last-child {
+    max-width: 650px;
+
+    font-size: 18px;
+
+    color: #e7f3ea;
+}
+
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+   ===================================================== */
+
+main {
+    max-width: 1000px;
+
+    margin: 35px auto;
+
+    padding: 0 20px;
+}
+
+
+/* Cada seção fica dentro de um cartão */
+.secao {
+    background-color: white;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =====================================================
+   TÍTULOS DAS SEÇÕES
+   ===================================================== */
+
+.titulo-secao {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.numero-secao {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 40px;
+
+    height: 40px;
+
+    background-color: #e1f0e5;
+
+    color: #1f5c38;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+.titulo-secao h2 {
+    color: #1f5c38;
+
+    font-size: 25px;
+
+    margin-bottom: 3px;
+}
+
+
+.titulo-secao p {
+    color: #657067;
+}
+
+
+/* =====================================================
+   FORMULÁRIO
+   ===================================================== */
+
+#formulario-acao {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+.campo {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.campo label {
+    font-weight: bold;
+
+    color: #34423a;
+}
+
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #cbd5ce;
+
+    border-radius: 7px;
+
+    background-color: white;
+
+    color: #26332a;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+
+/* Destaca o campo quando o usuário clica nele */
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: #2e7d4d;
+
+    box-shadow: 0 0 0 3px rgba(46, 125, 77, 0.12);
+}
+
+
+/* Permite redimensionar a descrição somente na vertical */
+.campo textarea {
+    resize: vertical;
+}
+
+
+/* =====================================================
+   BOTÃO PRINCIPAL
+   ===================================================== */
+
+.botao-principal {
+    align-self: flex-start;
+
+    border: none;
+
+    border-radius: 7px;
+
+    padding: 13px 24px;
+
+    background-color: #2e7d4d;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+
+.botao-principal:hover {
+    background-color: #245f3b;
+
+    transform: translateY(-1px);
+}
+
+
+.botao-principal:active {
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   MURAL
+   ===================================================== */
+
+#lista-acoes {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+
+/* Mensagem mostrada quando o mural está vazio */
+.mensagem-vazia {
+    padding: 20px;
+
+    background-color: #f5f7f5;
+
+    border: 1px dashed #b9c5bc;
+
+    border-radius: 8px;
+
+    color: #657067;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   FICHA DE CADA AÇÃO
+   ===================================================== */
+
+.ficha-acao {
+    background-color: #f8faf8;
+
+    border: 1px solid #dce5de;
+
+    border-left: 5px solid #2e7d4d;
+
+    border-radius: 8px;
+
+    padding: 22px;
+}
+
+
+/* Título da ação */
+.ficha-acao h3 {
+    color: #1f5c38;
+
+    font-size: 21px;
+
+    margin-bottom: 15px;
+}
+
+
+/* Informações da ação */
+.ficha-acao p {
+    margin-bottom: 8px;
+
+    color: #3f4c43;
+}
+
+
+/* Destaque para os nomes dos campos */
+.ficha-acao strong {
+    color: #26332a;
+}
+
+
+/* Descrição da ação */
+.ficha-descricao {
+    margin-top: 15px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #dce5de;
+}
+
+
+/* Categoria exibida na ficha */
+.ficha-categoria {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    background-color: #e1f0e5;
+
+    color: #1f5c38;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   ÁREA SOBRE O PROJETO
+   ===================================================== */
+
+.informacoes-projeto {
     display: grid;
-    grid-template-areas: 
-    "cabeca cabeca cabeca"
-    "braco corpo corpo"
-    "perna perna perna";
-    grid-template-rows: 200px 600px 150px ;
-    grid-template-columns: 200px auto auto;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
 }
-header{
-    grid-area: cabeca;
-    background-color: darkcyan;
+
+
+.informacoes-projeto div {
+    padding: 20px;
+
+    background-color: #f6f8f6;
+
+    border-radius: 8px;
 }
-aside{
-    grid-area: braco;
-    background-color: lightcoral;
+
+
+.informacoes-projeto h3 {
+    color: #1f5c38;
+
+    margin-bottom: 8px;
 }
-main{
-    grid-area:corpo;
-    background-color: thistle;
+
+
+.informacoes-projeto p {
+    color: #4f5c53;
+}
+
+
+/* =====================================================
+   RODAPÉ
+   ===================================================== */
+
+footer {
+    padding: 30px 20px;
+
+    background-color: #183d28;
+
+    color: #dcebe0;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   CELULARES
+   ===================================================== */
+
+/*
+   Estas regras entram em funcionamento
+   quando a tela tiver até 600 pixels.
+*/
+@media (max-width: 600px) {
+
+    /* Diminui o espaço externo da página */
+    main {
+        margin-top: 20px;
+
+        padding: 0 10px;
+    }
+
+
+    /* Diminui o cabeçalho */
+    header {
+        padding: 40px 20px;
+    }
+
+
+    /* Diminui o tamanho do título */
+    header h1 {
+        font-size: 30px;
+    }
+
+
+    /* Diminui o texto do cabeçalho */
+    header p:last-child {
+        font-size: 16px;
+    }
+
+
+    /* Diminui o espaço interno dos cartões */
+    .secao {
+        padding: 20px;
+    }
+
+
+    /* Títulos ficam um pouco menores */
+    .titulo-secao h2 {
+        font-size: 21px;
+    }
+
+
+    /* O botão ocupa toda a largura */
+    .botao-principal {
+        width: 100%;
+    }
+
+
+    /* A área sobre o projeto passa a ter uma coluna */
+    .informacoes-projeto {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Diminui um pouco as fichas */
+    .ficha-acao {
+        padding: 18px;
+    }
 }

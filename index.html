@@ -1,15 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
+    <!-- Permite usar acentos e caracteres do português -->
     <meta charset="UTF-8">
+
+    <!-- Faz o site se adaptar a celulares e tablets -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- Nome que aparece na aba do navegador -->
+    <title>Mural de Ações do Bairro</title>
+
+    <!-- Conecta o HTML ao arquivo CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>a a a a a a</header>
-    <aside>b b b b b b b</aside>
-    <main>c c c c c c c</main>
-    <footer>d d d d d d</footer>
+
+    <!-- =====================================================
+         CABEÇALHO DO SITE
+         ===================================================== -->
+
+    <header>
+        <div class="cabecalho-conteudo">
+            <p class="identificacao">VILA NOVA</p>
+
+            <h1>Mural de Ações do Bairro</h1>
+
+            <p>
+                Um registro das ações realizadas pelos moradores
+                para cuidar e fortalecer a comunidade.
+            </p>
+        </div>
+    </header>
+
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+         ===================================================== -->
+
+    <main>
+
+        <!-- =================================================
+             ÁREA DE CADASTRO
+             ================================================= -->
+
+        <section class="secao">
+
+            <div class="titulo-secao">
+                <span class="numero-secao">01</span>
+
+                <div>
+                    <h2>Cadastrar uma ação</h2>
+
+                    <p>
+                        Registre uma ação realizada na Vila Nova.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Formulário de cadastro -->
+            <form id="formulario-acao">
+
+                <!-- Título da ação -->
+                <div class="campo">
+                    <label for="titulo">Título da ação</label>
+
+                    <input
+                        type="text"
+                        id="titulo"
+                        name="titulo"
+                        maxlength="100"
+                        placeholder="Ex.: Mutirão de limpeza da praça"
+                        required
+                    >
+                </div>
+
+
+                <!-- Categoria -->
+                <div class="campo">
+                    <label for="categoria">Categoria</label>
+
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecione uma categoria</option>
+                        <option value="Ambiental">Ambiental</option>
+                        <option value="Social">Social</option>
+                        <option value="Educação">Educação</option>
+                        <option value="Saúde">Saúde</option>
+                    </select>
+                </div>
+
+
+                <!-- Local -->
+                <div class="campo">
+                    <label for="local">Local</label>
+
+                    <input
+                        type="text"
+                        id="local"
+                        name="local"
+                        maxlength="100"
+                        placeholder="Ex.: Praça central"
+                        required
+                    >
+                </div>
+
+
+                <!-- Quantidade de participantes -->
+                <div class="campo">
+                    <label for="participantes">
+                        Quantas pessoas participaram?
+                    </label>
+
+                    <input
+                        type="number"
+                        id="participantes"
+                        name="participantes"
+                        min="0"
+                        step="1"
+                        placeholder="Digite a quantidade"
+                        required
+                    >
+                </div>
+
+
+                <!-- Descrição da ação -->
+                <div class="campo">
+                    <label for="descricao">O que foi feito?</label>
+
+                    <textarea
+                        id="descricao"
+                        name="descricao"
+                        maxlength="500"
+                        rows="6"
+                        placeholder="Descreva o que foi realizado na ação."
+                        required
+                    ></textarea>
+                </div>
+
+
+                <!-- Botão de cadastro -->
+                <button type="submit" class="botao-principal">
+                    Cadastrar ação
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- =================================================
+             ÁREA DO MURAL
+             ================================================= -->
+
+        <section class="secao">
+
+            <div class="titulo-secao">
+                <span class="numero-secao">02</span>
+
+                <div>
+                    <h2>Mural de ações</h2>
+
+                    <p>
+                        Confira as ações registradas pelos moradores.
+                    </p>
+                </div>
+            </div>
+
+
+            <!--
+                Esta mensagem aparece quando não existem ações.
+                O JavaScript controla sua exibição.
+            -->
+            <p id="mensagem-vazia" class="mensagem-vazia">
+                Ainda não há ações cadastradas.
+            </p>
+
+
+            <!--
+                O JavaScript cria as fichas das ações
+                dentro deste elemento.
+            -->
+            <div id="lista-acoes"></div>
+
+        </section>
+
+
+        <!-- =================================================
+             ÁREA SOBRE O PROJETO
+             ================================================= -->
+
+        <section class="secao sobre-projeto">
+
+            <div class="titulo-secao">
+                <span class="numero-secao">03</span>
+
+                <div>
+                    <h2>Sobre o projeto</h2>
+
+                    <p>
+                        Por que este mural existe?
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="informacoes-projeto">
+
+                <div>
+                    <h3>Problema</h3>
+
+                    <p>
+                        Ações de limpeza e doação acontecem no bairro,
+                        mas muitas vezes não são registradas.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3>Quem usa</h3>
+
+                    <p>
+                        Moradores, associação de bairro e alunos
+                        que organizam mutirões.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3>Objetivo</h3>
+
+                    <p>
+                        Tornar visível o trabalho realizado pelos
+                        moradores e ajudar a manter um histórico
+                        das ações do bairro.
+                    </p>
+                </div>
+
+
+                <div>
+                    <h3>ODS</h3>
+
+                    <p>
+                        O projeto está relacionado ao ODS 1 -
+                        Erradicação da pobreza.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         RODAPÉ
+         ===================================================== -->
+
+    <footer>
+        <p>
+            Mural de Ações do Bairro — Vila Nova
+        </p>
+    </footer>
+
+
+    <!-- Conecta o HTML ao JavaScript -->
+    <script src="script.js"></script>
+
 </body>
 </html>
