@@ -479,3 +479,18 @@ footer {
         padding: 18px;
     }
 }
+.logo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    z-index: 1000;
+}
+.logoo{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 100px;
+    height: auto;
+    z-index: 1000;
+}
